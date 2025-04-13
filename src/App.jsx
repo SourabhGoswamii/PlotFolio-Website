@@ -3,11 +3,11 @@ import ProgrammingCards from "./programinglanguages";
 
 const projectData = [
   {
-    title: "JavaScript Chat Application",
+    title: "JavaScript Application",
     description: "A real-time Ecommerce platform built with Mern and Node.js",
     image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2028&auto=format&fit=crop",
-    link: "#",
-    tags: ["JavaScript", "MERN" ,"React", "Node.js"]
+    link: "https://dptproducts.vercel.app/",
+    tags: ["JavaScript", "MERN", "React", "Node.js"]
   },
   {
     title: "Healthcare Management System And AI Chatbot",
@@ -29,15 +29,15 @@ const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
-      
+
       // Calculate which section is in view
       const sections = ["hero", "skills", "projects", "about", "contact"];
       const sectionElements = sections.map(id => document.getElementById(id));
-      
+
       for (let i = sectionElements.length - 1; i >= 0; i--) {
         const section = sectionElements[i];
         if (section) {
@@ -51,10 +51,10 @@ const Portfolio = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     // Trigger the loading animation
     setTimeout(() => setIsLoaded(true), 300);
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -65,7 +65,7 @@ const Portfolio = () => {
         <div id="particles-js" className="absolute inset-0"></div>
         <div className="absolute inset-0 bg-gradient-radial from-purple-900/10 via-transparent to-transparent"></div>
       </div>
-      
+
       {/* Animated Lines Background */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <svg width="100%" height="100%" className="opacity-20">
@@ -75,18 +75,18 @@ const Portfolio = () => {
           <rect width="100%" height="100%" fill="url(#grid)"></rect>
         </svg>
       </div>
-      
+
       {/* Cursor Glow Effect */}
       <div className="cursor-glow"></div>
-      
+
       <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'} flex flex-col items-center`}>
         {/* Floating Navigation */}
         <nav className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 backdrop-blur-md bg-black/30 rounded-full px-1.5 py-1.5 border border-gray-700/50 shadow-2xl transition-all duration-500 ${scrollY > 100 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <ul className="flex items-center space-x-1">
             {["hero", "skills", "projects", "about", "contact"].map((section, index) => (
               <li key={index}>
-                <a 
-                  href={`#${section}`} 
+                <a
+                  href={`#${section}`}
                   className={`flex items-center justify-center h-10 px-4 rounded-full transition-all duration-300 ${activeSection === section ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -95,7 +95,7 @@ const Portfolio = () => {
             ))}
           </ul>
         </nav>
-        
+
         {/* Header with Glass Morphism */}
         <header className="w-full max-w-7xl flex justify-between items-center py-5 px-8 backdrop-blur-md bg-black/30 rounded-b-2xl shadow-lg border-x border-b border-gray-700/50 fixed top-0 z-50 transition-all duration-500">
           <div className="flex items-center">
@@ -133,24 +133,24 @@ const Portfolio = () => {
                   <div className="h-0.5 w-12 bg-purple-500 mr-3"></div>
                   <span className="text-purple-400 font-mono">Hello, I'm</span>
                 </div>
-                
+
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
                   <span className="text-white">Sourabh </span>
                   <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Goswami</span>
                 </h2>
-                
+
                 <div className="typewriter-container h-10 mb-8">
                   <span className="text-xl md:text-2xl text-gray-300">I create </span>
                   <span className="typewriter text-xl md:text-2xl font-medium text-purple-300">
                     elegant solutions
                   </span>
                 </div>
-                
+
                 <p className="mt-2 text-xl text-gray-300 leading-relaxed max-w-xl">
-                  Turning innovative ideas into elegant solutions through creative coding and design. 
+                  Turning innovative ideas into elegant solutions through creative coding and design.
                   <span className="text-purple-400"> Let's build something amazing together.</span>
                 </p>
-                
+
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a href="#contact" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white rounded-full">
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md"></span>
@@ -162,7 +162,7 @@ const Portfolio = () => {
                       </svg>
                     </span>
                   </a>
-                  
+
                   <a href="#projects" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white rounded-full hover:bg-purple-500/10">
                     <span className="absolute inset-0 w-full h-full border border-purple-500 rounded-full"></span>
                     <span className="relative flex items-center">
@@ -170,7 +170,7 @@ const Portfolio = () => {
                     </span>
                   </a>
                 </div>
-                
+
                 {/* Social Icons */}
                 <div className="mt-10 flex gap-5">
                   <a href="https://github.com/SourabhGoswamii" className="group p-2 bg-black/20 rounded-full border border-gray-800 text-gray-400 hover:text-purple-400 hover:border-purple-500/50 transition-all duration-300">
@@ -194,32 +194,25 @@ const Portfolio = () => {
                     </svg>
                   </a>
                 </div>
-                
+
                 {/* Current Date */}
                 <div className="mt-10 inline-block rounded-full py-1 px-3 text-xs font-mono text-gray-500 bg-gray-900/40 border border-gray-800">
-                  Last updated: April 2, 2025
+                  Last updated: April 12, 2025
                 </div>
               </div>
-              
+
               <div className="md:w-1/2 flex justify-center mt-16 md:mt-0 relative" data-aos="fade-left">
                 {/* Simplified Hero Image */}
                 <div className="relative w-128 h-128">
-                  <img 
-                    src="../public/image.png" 
-                    alt="Sourabh Goswami" 
+                  <img
+                    src="../image.png"
+                    alt="Sourabh Goswami"
                     className="w-full h-full object-contain"
                   />
                 </div>
               </div>
             </div>
-            
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-              <span className="text-sm text-gray-400 mb-2">Scroll Down</span>
-              <div className="w-5 h-10 border-2 border-gray-400 rounded-full flex justify-center p-1">
-                <div className="w-1 h-2 bg-purple-400 rounded-full animate-scroll-down"></div>
-              </div>
-            </div>
+
           </section>
 
           {/* Skills Section - Programming Cards */}
@@ -236,7 +229,7 @@ const Portfolio = () => {
                 Expertise in multiple programming languages and frameworks to create efficient and elegant solutions for modern challenges.
               </p>
             </div>
-            <ProgrammingCards/>
+            <ProgrammingCards />
           </section>
 
           {/* Projects Section with Advanced Card Hover Effects */}
@@ -253,25 +246,25 @@ const Portfolio = () => {
                 Explore some of my recent work showcasing problem-solving abilities and technical expertise.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {projectData.map((project, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-b from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10 transform hover:-translate-y-2">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
+
                   <div className="h-48 overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
+                    <img
+                      src={project.image}
+                      alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
                   </div>
-                  
+
                   <div className="p-6 relative z-10">
                     <h4 className="text-xl font-bold mb-2 text-white group-hover:text-purple-300 transition-colors duration-300">{project.title}</h4>
                     <p className="text-gray-400 mb-4">{project.description}</p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag, tagIndex) => (
                         <span key={tagIndex} className="text-xs py-1 px-2 rounded-full bg-gray-800 text-gray-300 border border-gray-700">
@@ -279,7 +272,7 @@ const Portfolio = () => {
                         </span>
                       ))}
                     </div>
-                    
+
                     <a href={project.link} className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
                       <span className="relative">
                         View Project
@@ -309,30 +302,30 @@ const Portfolio = () => {
                 Passionate developer with a focus on creating intuitive and performant applications.
               </p>
             </div>
-            
+
             <div className="flex flex-col md:flex-row items-center gap-10 backdrop-blur-md bg-black/30 p-8 rounded-2xl border border-gray-700/50 relative overflow-hidden" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="500">
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-purple-600/10 rounded-full filter blur-3xl"></div>
-              
+
               <div className="md:w-1/3">
                 <div className="relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 animate-pulse"></div>
                   <div className="relative rounded-lg overflow-hidden border-2 border-gray-800 group">
-                    <img 
-                      src="../public\banner.jpg" 
-                      alt="About Sourabh" 
+                    <img
+                      src="../banner.jpg"
+                      alt="About Sourabh"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
               </div>
-              
+
               <div className="md:w-2/3">
                 <h4 className="text-2xl font-bold text-white mb-4">Sourabh Goswami</h4>
                 <p className="text-gray-300 mb-6 leading-relaxed">
                   With over 1 years of experience in software development, I specialize in creating elegant, efficient, and user-friendly applications. My passion lies in solving complex problems through clean and maintainable code.
                 </p>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-4 text-gray-300 mb-8">
                   <div className="flex items-center">
                     <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mr-2"></div>
@@ -365,7 +358,7 @@ const Portfolio = () => {
                     <span className="ml-2 text-gray-400">Himachal Pardesh</span>
                   </div>
                 </div>
-                
+
                 {/* Skills Progress Bars */}
                 <div className="mb-8">
                   <h5 className="text-lg font-medium text-white mb-4">Technical Skills</h5>
@@ -399,10 +392,10 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-4">
-                  <a 
-                    href="#contact" 
+                  <a
+                    href="#contact"
                     className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-6 rounded-lg shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
                   >
                     Contact Me
@@ -414,102 +407,22 @@ const Portfolio = () => {
               </div>
             </div>
           </section>
-          
-          {/* Contact Section */}
-          <section id="contact" className="w-full max-w-7xl px-6 py-24" data-aos="fade-up">
-            <div className="mb-16">
-              <div className="flex items-center mb-3">
-                <div className="h-0.5 w-12 bg-purple-500 mr-3"></div>
-                <span className="text-purple-400 font-mono">Get In Touch</span>
-              </div>
-              <h3 className="text-4xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Contact Me</span>
-              </h3>
-              <p className="text-gray-400 max-w-2xl">
-                Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
-              </p>
-            </div>
-            
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="md:w-1/3 space-y-6">
-                <div className="backdrop-blur-md bg-black/30 rounded-2xl border border-gray-700/50 p-6 hover:border-purple-500/50 transition-colors duration-300 hover:shadow-lg hover:shadow-purple-500/10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-medium text-white mb-2">Email</h4>
-                  <p className="text-gray-400">sourabh.goswami2211@gmail.com</p>
-                </div>
-                
-                <div className="backdrop-blur-md bg-black/30 rounded-2xl border border-gray-700/50 p-6 hover:border-purple-500/50 transition-colors duration-300 hover:shadow-lg hover:shadow-purple-500/10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-medium text-white mb-2">Phone</h4>
-                  <p className="text-gray-400">+91 87555-26609</p>
-                </div>
-              </div>
-              
-              <div className="md:w-2/3 backdrop-blur-md bg-black/30 rounded-2xl border border-gray-700/50 p-8">
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2" htmlFor="name">Your Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white" 
-                      placeholder="John Doe" 
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2" htmlFor="email">Your Email</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white" 
-                      placeholder="john@example.com" 
-                    />
-                  </div>
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-400 mb-2" htmlFor="subject">Subject</label>
-                    <input 
-                      type="text" 
-                      id="subject" 
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white" 
-                      placeholder="Project Inquiry" 
-                    />
-                  </div>
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-400 mb-2" htmlFor="message">Message</label>
-                    <textarea 
-                      id="message" 
-                      rows={5} 
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 text-white" 
-                      placeholder="Tell me about your project..."
-                    ></textarea>
-                  </div>
-                  <div className="md:col-span-2 flex justify-center md:justify-end">
-                    <button 
-                      type="submit" 
-                      className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white rounded-lg"
-                    >
-                      <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-600 to-pink-600 shadow-md"></span>
-                      <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition-all duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-                      <span className="relative flex items-center">
-                        Send Message
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </section>
+
+          <a href="mailto:sourabhgoswami2211@gmail.com">
+            <button
+              type="submit"
+              className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white rounded-lg"
+            >
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-600 to-pink-600 shadow-md"></span>
+              <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition-all duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
+              <span className="relative flex items-center">
+                Send Message
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </span>
+            </button>
+          </a>
 
           {/* Footer */}
           <footer className="w-full mt-12 text-center text-gray-400 border-t border-gray-800 pt-8 pb-6">
